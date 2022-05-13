@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ESPN Page Test" verbose="1">
+    <test name="Cancelation Account Tests">
+
+        <parameter name="url" value="https://www.espnqa.com/?src=com&amp;_adblock=true&amp;espn=cloud"></parameter>
+
+        <classes>
+            <class name="cancel.CancelAccountTests"></class>
+        </classes>
+    </test>
+</suite>
