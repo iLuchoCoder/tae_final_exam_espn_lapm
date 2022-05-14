@@ -18,7 +18,10 @@ public class BaseTests {
     @BeforeClass
     @Parameters({"url"})
     public void SetUpDocument(String url){
-        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+        // Windows Property
+        //System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+        // MacOS Property
+        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-notifications");
         driver = new ChromeDriver(options);
