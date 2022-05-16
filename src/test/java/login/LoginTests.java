@@ -13,32 +13,32 @@ public class LoginTests extends BaseTests {
     @Test(description = "Test for login with given credentials")
     public void testSuccessLogin(){
         log.info("Clicking on pre login button 1");
-        loginPage.clickLoginPreButton1();
+        frontPage.clickLoginPreButton1();
         log.info("Clicking on pre login button 2");
-        loginPage.clickLoginPreButton2();
+        frontPage.clickLoginPreButton2();
         log.info("Setting the test onto iFrame");
-        loginPage.setToiFrame();
+        frontPage.setToiFrame();
         log.info("Putting the username value on text username element");
-        loginPage.setUsername();
+        frontPage.setUsername();
         log.info("Putting the password value on text password element");
-        loginPage.setPassword();
+        frontPage.setPassword();
         log.info("Clicking on login button");
-        loginPage.clickLoginButton();
+        frontPage.clickLoginButton();
         log.info("Waiting until the element PreButton1 shows up");
-        loginPage.waitTimePreButton1();
+        frontPage.waitTimePreButton1();
         log.info("Clicking on pre login button 1");
-        loginPage.clickLoginPreButton1();
+        frontPage.clickLoginPreButton1();
         log.info("Finally checking if the login process completes successfully");
-        assertTrue(loginPage.getOnPageAlert().contains("Welcome"),"Alert text is incorrect");
+        assertTrue(frontPage.getOnPageAlert().contains("Welcome"),"Alert text is incorrect");
     }
 
     @Test(description = "After login, this test makes a logout", dependsOnMethods = "testSuccessLogin")
     public void testSuccessLogout(){
         log.info("Clicking on log out post button");
-        loginPage.clickLogoutPostButton();
+        frontPage.clickLogoutPostButton();
         log.info("Waiting until the element LogInOut shows up");
-        loginPage.waitTimeLabelLogInOut();
+        frontPage.waitTimeLabelLogInOut();
         log.info("Finally checking if the logout process completes successfully");
-        assertTrue(loginPage.getOnPageAlertLogOutSuccesfull().contains("button"),"Alert text is incorrect");
+        assertTrue(frontPage.getOnPageAlertLogOutSuccesfull().contains("button"),"Alert text is incorrect");
     }
 }

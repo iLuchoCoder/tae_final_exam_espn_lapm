@@ -10,7 +10,7 @@ import strings.EspnStrings;
  * ESPN Login Page, class that contains the methods to be used in the test
  * @author luis.pineda@globant.com
  */
-public class LoginPage {
+public class FrontPage {
 
     private WebDriver driver;
     private EspnStrings espnStrings = new EspnStrings();
@@ -31,7 +31,7 @@ public class LoginPage {
     /**
      * Constructor.
      */
-    public LoginPage(WebDriver driver){
+    public FrontPage(WebDriver driver){
         this.driver = driver;
     }
 

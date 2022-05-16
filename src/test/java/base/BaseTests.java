@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-import pages.LoginPage;
+import pages.FrontPage;
 import strings.EspnStrings;
 
 /**
@@ -16,7 +16,7 @@ import strings.EspnStrings;
 public class BaseTests {
 
     private WebDriver driver;
-    protected LoginPage loginPage;
+    protected FrontPage frontPage;
     private static EspnStrings espnStrings = new EspnStrings();
 
     /**
@@ -36,7 +36,7 @@ public class BaseTests {
         driver.get(url);
         driver.manage().window().maximize();
 
-        loginPage = new LoginPage(driver);
+        frontPage = new FrontPage(driver);
     }
 
     /**

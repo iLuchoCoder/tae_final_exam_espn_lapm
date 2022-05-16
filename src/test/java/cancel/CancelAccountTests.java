@@ -13,30 +13,30 @@ public class CancelAccountTests extends BaseTests {
     @Test(description = "Test for cancel account")
     public void testSuccessCancelAccount(){
         log.info("Clicking on pre login button 1");
-        loginPage.clickLoginPreButton1();
+        frontPage.clickLoginPreButton1();
         log.info("Clicking on pre login button 2");
-        loginPage.clickLoginPreButton2();
+        frontPage.clickLoginPreButton2();
         log.info("Setting the test onto iFrame");
-        loginPage.setToiFrame();
+        frontPage.setToiFrame();
         log.info("Putting the username value on text username element");
-        loginPage.setUsername();
+        frontPage.setUsername();
         log.info("Putting the password value on text password element");
-        loginPage.setPassword();
+        frontPage.setPassword();
         log.info("Clicking on login button");
-        loginPage.clickLoginButton();
+        frontPage.clickLoginButton();
         log.info("Waiting until the element PreButton1 shows up");
-        loginPage.waitTimePreButton1();
+        frontPage.waitTimePreButton1();
         log.info("Clicking on pre login button");
-        loginPage.clickLoginPreButton1();
+        frontPage.clickLoginPreButton1();
         log.info("Clicking on profile button");
-        loginPage.clickProfileButton();
+        frontPage.clickProfileButton();
         log.info("Setting the test onto iFrame");
-        loginPage.setToiFrame();
+        frontPage.setToiFrame();
         log.info("Clicking on cancel button");
-        loginPage.clickCancelAccountButton();
+        frontPage.clickCancelAccountButton();
         log.info("Clicking on submit cancellation button");
-        loginPage.clickSubmitCancelationButton();
+        frontPage.clickSubmitCancelationButton();
         log.info("Finally checking if the cancellation process completes successfully");
-        assertTrue(loginPage.getOnPageAlertLogOutSuccesfull().contains("button"),"Alert text is incorrect");
+        assertTrue(frontPage.getOnPageAlertLogOutSuccesfull().contains("button"),"Alert text is incorrect");
     }
 }
