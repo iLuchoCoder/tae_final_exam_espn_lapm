@@ -1,0 +1,34 @@
+package final_exam;
+
+import base.BaseTests;
+import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
+
+import static org.testng.Assert.assertTrue;
+
+public class FinalWebModuleTests extends BaseTests {
+
+    private Logger log = Logger.getLogger(FinalWebModuleTests.class);
+
+    @Test(description = "Test for login with given credentials")
+    public void testSuccessLogin(){
+        log.info("Clicking on pre login button 1");
+        loginPage.clickLoginPreButton1();
+        log.info("Clicking on pre login button 2");
+        loginPage.clickLoginPreButton2();
+        log.info("Setting the test onto iFrame");
+        loginPage.setToiFrame();
+        log.info("Putting the username value on text username element");
+        loginPage.setUsername();
+        log.info("Putting the password value on text password element");
+        loginPage.setPassword();
+        log.info("Clicking on login button");
+        loginPage.clickLoginButton();
+        log.info("Waiting until the element PreButton1 shows up");
+        loginPage.waitTimePreButton1();
+        log.info("Clicking on pre login button 1");
+        loginPage.clickLoginPreButton1();
+        log.info("Finally checking if the login process completes successfully");
+        assertTrue(loginPage.getOnPageAlert().contains("Welcome"),"Alert text is incorrect");
+    }
+}

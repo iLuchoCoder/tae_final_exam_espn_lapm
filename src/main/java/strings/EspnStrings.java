@@ -13,7 +13,7 @@ public class EspnStrings {
     public EspnStrings(){
         super();
         this.username = "testfinal88@yopmail.com";
-        this.password = "Veridisquo8";
+        this.password = "Thanksfortheknowledge88";
         this.element1 = "//a[@id='global-user-trigger']";
         this.element2 = "//li[@class='user hover']//div[@class='global-user']//div[@class='global-user-container']//ul[@class='account-management']//li//a[@data-affiliatename='espn'][normalize-space()='Log In']";
         this.element3 = "#disneyid-iframe";
