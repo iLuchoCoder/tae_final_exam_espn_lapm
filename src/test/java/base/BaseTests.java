@@ -9,19 +9,27 @@ import org.testng.annotations.Parameters;
 import pages.LoginPage;
 import strings.EspnStrings;
 
+/**
+ * BaseTests, class that setups the url and driver conditions
+ * @author luis.pineda@globant.com
+ */
 public class BaseTests {
 
     private WebDriver driver;
     protected LoginPage loginPage;
     private static EspnStrings espnStrings = new EspnStrings();
 
+    /**
+     * SetUpDocument
+     * Method that initializes the initial execution of the driver and is passed as a parameter to the Login Page
+     */
     @BeforeClass
     @Parameters({"url"})
     public void SetUpDocument(String url){
         // Windows Property
-        //System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
         // MacOS Property
-        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
+        //System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-notifications");
         driver = new ChromeDriver(options);
@@ -31,6 +39,10 @@ public class BaseTests {
         loginPage = new LoginPage(driver);
     }
 
+    /**
+     * shutdown
+     * Method that closes the driver after the execution of the tests
+     */
     @AfterClass
     public void shutdown(){
         driver.quit();
