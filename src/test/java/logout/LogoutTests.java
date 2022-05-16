@@ -10,7 +10,7 @@ public class LogoutTests extends BaseTests {
 
     private Logger log = Logger.getLogger(LogoutTests.class);
 
-    @Test
+    @Test(description = "Test for logout process")
     public void testSuccessLogout(){
         log.info("Clicking on pre login button 1");
         loginPage.clickLoginPreButton1();
