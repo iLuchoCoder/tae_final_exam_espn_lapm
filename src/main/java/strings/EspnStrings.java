@@ -6,6 +6,7 @@ package strings;
  */
 public class EspnStrings {
     private String username, password, element1,element2,element3,element4,element5,element6,element7,element8,element9,element10, element11, element12;
+    private String element13, element14,element15,element16,element17;
 
     /**
      * Constructor.
@@ -26,12 +27,19 @@ public class EspnStrings {
         this.element10 = "//li[@class='user hover']//div[@class='global-user']//div[@class='global-user-container']//ul[@class='account-management']//li//a[contains(text(),'ESPN Profile')]";
         this.element11 = "//a[@id='cancel-account']";
         this.element12 = "//button[@type='submit']";
+
+        // Section for Final Exam Web Module elements
+        this.element13="//article[@id='sideLogin-right-rail']//button[@class='button-alt med'][normalize-space()='Log In']";
+        this.element14="//iframe[@id='oneid-iframe']";
+        this.element15="//div[@data-testid='login-logo'][contains(.,'Disney account')]";
+        this.element16="//button[@type='submit'][contains(.,'Log In')]";
+        this.element17="//button[@type='submit'][contains(.,'Sign Up')]";
     }
 
     /**
      * getUsername
      * Get the username for the test.
-     * @return username String
+     * @return String
      */
     public String getUsername() {
         return username;
@@ -40,7 +48,7 @@ public class EspnStrings {
     /**
      * getPassword
      * Get the password for the test.
-     * @return password String
+     * @return String
      */
     public String getPassword() {
         return password;
@@ -49,7 +57,7 @@ public class EspnStrings {
     /**
      * getElement1
      * Get the element1 for the test on ESPN Page.
-     * @return element1 String
+     * @return String
      */
     public String getElement1() {
         return element1;
@@ -58,7 +66,7 @@ public class EspnStrings {
     /**
      * getElement2
      * Get the element2 for the test on ESPN Page.
-     * @return element2 String
+     * @return String
      */
     public String getElement2() {
         return element2;
@@ -67,7 +75,7 @@ public class EspnStrings {
     /**
      * getElement3
      * Get the element3 for the test on ESPN Page.
-     * @return element3 String
+     * @return String
      */
     public String getElement3() {
         return element3;
@@ -76,7 +84,7 @@ public class EspnStrings {
     /**
      * getElement4
      * Get the element4 for the test on ESPN Page.
-     * @return element4 String
+     * @return String
      */
     public String getElement4() {
         return element4;
@@ -85,7 +93,7 @@ public class EspnStrings {
     /**
      * getElement5
      * Get the element5 for the test on ESPN Page.
-     * @return element5 String
+     * @return String
      */
     public String getElement5() {
         return element5;
@@ -94,7 +102,7 @@ public class EspnStrings {
     /**
      * getElement6
      * Get the element6 for the test on ESPN Page.
-     * @return element6 String
+     * @return String
      */
     public String getElement6() {
         return element6;
@@ -103,7 +111,7 @@ public class EspnStrings {
     /**
      * element7
      * Get the element7 for the test on ESPN Page.
-     * @return element7 String
+     * @return String
      */
     public String getElement7() {
         return element7;
@@ -112,7 +120,7 @@ public class EspnStrings {
     /**
      * getElement8
      * Get the element8 for the test on ESPN Page.
-     * @return element8 String
+     * @return String
      */
     public String getElement8() {
         return element8;
@@ -121,7 +129,7 @@ public class EspnStrings {
     /**
      * getElement9
      * Get the element9 for the test on ESPN Page.
-     * @return element9 String
+     * @return String
      */
     public String getElement9() {
         return element9;
@@ -130,7 +138,7 @@ public class EspnStrings {
     /**
      * getElement10
      * Get the element10 for the test on ESPN Page.
-     * @return element10 String
+     * @return String
      */
     public String getElement10() {
         return element10;
@@ -139,7 +147,7 @@ public class EspnStrings {
     /**
      * getElement11
      * Get the element11 for the test on ESPN Page.
-     * @return element11 String
+     * @return String
      */
     public String getElement11() {
         return element11;
@@ -148,9 +156,55 @@ public class EspnStrings {
     /**
      * getElement12
      * Get the element12 for the test on ESPN Page.
-     * @return element12 String
+     * @return String
      */
     public String getElement12() {
         return element12;
+    }
+
+    /**
+     * getElement13
+     * Get the element13 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement13() {
+        return element13;
+    }
+
+    /**
+     * getElement14
+     * Get the element14 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement14() {
+        return element14;
+    }
+
+
+    /**
+     * getElement15
+     * Get the element15 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement15() {
+        return element15;
+    }
+
+    /**
+     * getElement16
+     * Get the element16 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement16() {
+        return element16;
+    }
+
+    /**
+     * getElement17
+     * Get the element17 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement17() {
+        return element17;
     }
 }

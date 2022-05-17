@@ -28,6 +28,13 @@ public class FrontPage {
     private By cancelAccountButton = By.xpath(espnStrings.getElement11());
     private By submitCancelationButton = By.xpath(espnStrings.getElement12());
 
+    // Section for Final Exam Web Module properties
+    private By loginFrontPageButton = By.xpath(espnStrings.getElement13());
+    private By oneSingleIframe = By.xpath(espnStrings.getElement14());
+    private By iframeLogo = By.xpath(espnStrings.getElement15());
+    private By loginButtonIframe = By.xpath(espnStrings.getElement16());
+    private By signUpButtonIframe = By.xpath(espnStrings.getElement17());
+
     /**
      * Constructor.
      */
@@ -149,5 +156,50 @@ public class FrontPage {
     public void waitTimeLabelLogInOut(){
         WebDriverWait wait = new WebDriverWait(driver,30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(espnStrings.getElement9())));
+    }
+
+    //// Section for Final Exam Web Module methods
+
+    /**
+     * clickOnLogInButtonOnFrontPage
+     * Method that click onto the found element on ESPN Page.
+     */
+    public void clickOnLogInButtonOnFrontPage(){
+        driver.findElement(loginFrontPageButton).click();
+    }
+
+    /**
+     * setToiFrame
+     * Method that switch the test onto the found frame on the ESPN Page.
+     */
+    public void setToOneSingleLoginIframe(){
+        driver.switchTo().frame(driver.findElement(oneSingleIframe));
+    }
+
+    /**
+     * getOnElementAlertLogoIframe
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementAlertLogoIframe(){
+        return driver.findElement(iframeLogo).isDisplayed();
+    }
+
+    /**
+     * getOnElementAlertLoginButtonIframe
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementAlertLoginButtonIframe(){
+        return driver.findElement(loginButtonIframe).isDisplayed();
+    }
+
+    /**
+     * getOnElementAlertSignUpButtonIframe
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementAlertSignUpButtonIframe(){
+        return driver.findElement(signUpButtonIframe).isDisplayed();
     }
 }

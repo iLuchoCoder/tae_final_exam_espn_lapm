@@ -26,6 +26,7 @@ public class BaseTests {
     @BeforeClass
     @Parameters({"url"})
     public void SetUpDocument(String url){
+        // Chrome Driver for version 101.0.4951.41
         // Windows Property
         System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
         // MacOS Property
