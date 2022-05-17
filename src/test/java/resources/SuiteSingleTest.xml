@@ -5,7 +5,7 @@
         <parameter name="url" value="https://www.espnqa.com/?src=com&amp;_adblock=true&amp;espn=cloud"></parameter>
 
         <classes>
-            <class name="final_exam.FinalWebModuleTests"></class>
+            <class name="final_exam.SingleTests"></class>
         </classes>
     </test>
 </suite>

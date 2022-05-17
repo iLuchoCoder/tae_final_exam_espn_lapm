@@ -3,8 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import strings.EspnStrings;
+
 
 /**
  * ESPN Login Page, class that contains the methods to be used in the test
@@ -14,6 +16,7 @@ public class FrontPage {
 
     private WebDriver driver;
     private EspnStrings espnStrings = new EspnStrings();
+
 
     private By loginPreButton1 = By.xpath(espnStrings.getElement1());
     private By loginPreButton2 = By.xpath(espnStrings.getElement2());
@@ -34,6 +37,8 @@ public class FrontPage {
     private By iframeLogo = By.xpath(espnStrings.getElement15());
     private By loginButtonIframe = By.xpath(espnStrings.getElement16());
     private By signUpButtonIframe = By.xpath(espnStrings.getElement17());
+    private By countryRegionLink = By.xpath(espnStrings.getElement18());
+
 
     /**
      * Constructor.
@@ -202,4 +207,21 @@ public class FrontPage {
     public boolean getOnElementAlertSignUpButtonIframe(){
         return driver.findElement(signUpButtonIframe).isDisplayed();
     }
+
+    /**
+     * clickOnSignUpButtonOnFrontPage
+     * Method that click onto the found element on ESPN Page.
+     */
+    public void clickOnSignUpButtonOnFrontPage(){
+        driver.findElement(signUpButtonIframe).click();
+    }
+
+    /**
+     * clickOnCountryRegion
+     * Method that click onto the found element on ESPN Page.
+     */
+    public void clickOnCountryRegion(){
+        driver.findElement(countryRegionLink).click();
+    }
+
 }

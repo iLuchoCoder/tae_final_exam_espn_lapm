@@ -41,7 +41,7 @@ public class BaseTests {
     }
 
     /**
-     * shutdown
+     * Shutdown
      * Method that closes the driver after the execution of the tests
      */
     @AfterClass

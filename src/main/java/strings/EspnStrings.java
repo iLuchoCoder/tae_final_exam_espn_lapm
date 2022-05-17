@@ -6,7 +6,7 @@ package strings;
  */
 public class EspnStrings {
     private String username, password, element1,element2,element3,element4,element5,element6,element7,element8,element9,element10, element11, element12;
-    private String element13, element14,element15,element16,element17;
+    private String element13, element14,element15,element16,element17,element18,element19;
 
     /**
      * Constructor.
@@ -29,11 +29,13 @@ public class EspnStrings {
         this.element12 = "//button[@type='submit']";
 
         // Section for Final Exam Web Module elements
-        this.element13="//article[@id='sideLogin-right-rail']//button[@class='button-alt med'][normalize-space()='Log In']";
-        this.element14="//iframe[@id='oneid-iframe']";
-        this.element15="//div[@data-testid='login-logo'][contains(.,'Disney account')]";
-        this.element16="//button[@type='submit'][contains(.,'Log In')]";
-        this.element17="//button[@type='submit'][contains(.,'Sign Up')]";
+        this.element13 = "//article[@id='sideLogin-right-rail']//button[@class='button-alt med'][normalize-space()='Log In']";
+        this.element14 = "//iframe[@id='oneid-iframe']";
+        this.element15 = "//div[@data-testid='login-logo'][contains(.,'Disney account')]";
+        this.element16 = "//button[@type='submit'][contains(.,'Log In')]";
+        this.element17 = "//button[@type='submit'][contains(.,'Sign Up')]";
+        this.element18 = "//a[contains(@aria-label,'Change')]";
+        this.element19 = "//select[contains(@data-testid,'InputSelect')]";
     }
 
     /**
@@ -206,5 +208,23 @@ public class EspnStrings {
      */
     public String getElement17() {
         return element17;
+    }
+
+    /**
+     * getElement18
+     * Get the element18 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement18() {
+        return element18;
+    }
+
+    /**
+     * getElement19
+     * Get the element19 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement19() {
+        return element19;
     }
 }
