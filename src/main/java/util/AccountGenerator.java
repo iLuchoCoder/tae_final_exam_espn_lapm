@@ -21,7 +21,7 @@ public class AccountGenerator {
         this.account.setFirst_name(faker.name().firstName());
         this.account.setLast_name(faker.name().lastName());
         this.account.setEmail(faker.internet().emailAddress());
-        this.account.setPassword(faker.internet().password());
+        this.account.setPassword(faker.internet().password()+"TAE888#@");
     }
 
     /**

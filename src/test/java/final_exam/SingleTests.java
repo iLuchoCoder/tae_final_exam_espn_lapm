@@ -11,7 +11,7 @@ public class SingleTests extends BaseTests {
 
     private Logger log = Logger.getLogger(SingleTests.class);
 
-    @Test(description = "Point 2 - Click on login and check some elements")
+    @Test(description = "Point 1, 2 - Click on login and check some elements")
     public void checkElementsOnIframeLoginButton(){
         log.info("Clicking on login button front page");
         frontPage.clickOnLogInButtonOnFrontPage();
@@ -25,7 +25,8 @@ public class SingleTests extends BaseTests {
         assertTrue(frontPage.getOnElementAlertSignUpButtonIframe(),"Sign Up Button not found");
     }
 
-    @Test(description = "Point 3 - Click sign up button and check some elements", dependsOnMethods = "checkElementsOnIframeLoginButton")
+    @Test(description = "Point 3 - Click sign up button and check some elements"
+            , dependsOnMethods = "checkElementsOnIframeLoginButton")
     public void checkElementsOnSignUpOnIframe(){
         log.info("Clicking on sign up button on the iFrame");
         frontPage.clickOnSignUpButtonOnFrontPage();
@@ -46,7 +47,8 @@ public class SingleTests extends BaseTests {
         assertTrue(frontPage.getOnElementAlertCloseButtonIframe(),"Sign Up Button not found");
     }
 
-    @Test(description = "Point 4 - Data will be generated to be placed on the page and make a record",dependsOnMethods = "checkElementsOnSignUpOnIframe")
+    @Test(description = "Point 4 - Data will be generated to be placed on the page and make a record"
+            ,dependsOnMethods = "checkElementsOnSignUpOnIframe")
     public void signUpAccount(){
         log.info("Putting the data on the page");
         frontPage.fillSignUpData();
@@ -59,4 +61,24 @@ public class SingleTests extends BaseTests {
         log.info("Finally checking if the login process completes successfully after sign up");
         assertTrue(frontPage.getOnPageAlert().contains("Welcome"),"Alert text is incorrect");
     }
+
+    @Test(description = "Points 5,6,7 - Click on 'Watch' and validate that at least one carousel is present"
+            ,dependsOnMethods = "signUpAccount")
+    public void clickWatchSectionAndValidate(){
+        log.info("Clicking on Watch Section");
+        frontPage.clickWatchButton();
+        log.info("Clicking on the second video on the first carrousel");
+        frontPage.clickVideoCarrousel();
+        log.info("Validating if -> 'X' close button on carrousel");
+        assertTrue(frontPage.getOnElementCloseButtonVideoCarrousel(),"Close Button not found");
+        log.info("Clicking on the 'X' close button on carrousel");
+        frontPage.clickCloseButtonVideoCarrousel();
+    }
+
+    @Test(description = "Points 8, 9 - Go back to landing page and validate 'Welcome {{username}}!'"
+            ,dependsOnMethods = "clickWatchSectionAndValidate")
+    public void validateWelcomeLoginMessage(){
+
+    }
+
 }

@@ -47,6 +47,9 @@ public class FrontPage {
     private By emailInput = By.xpath(espnStrings.getElement22());
     private By passwordInput = By.xpath(espnStrings.getElement23());
     private By closeButtonIframe = By.xpath(espnStrings.getElement24());
+    private By watchButton = By.xpath(espnStrings.getElement25());
+    private By carrouselOnWatch = By.xpath(espnStrings.getElement26());
+    private By closeButtonCarrousel = By.xpath(espnStrings.getElement27());
 
 
     /**
@@ -302,5 +305,40 @@ public class FrontPage {
         log.info("Setting the password on page [" + accountGenerator.getPassword()+"]");
         driver.findElement(passwordInput).sendKeys(accountGenerator.getPassword());
     }
+
+    /**
+     * clickWatchButton
+     * Method that click onto the found element on ESPN Page.
+     */
+    public void clickWatchButton(){
+        driver.findElement(watchButton).click();
+    }
+
+    /**
+     * clickCarrousel
+     * Method that click onto the found element on ESPN Page.
+     */
+    public void clickVideoCarrousel(){
+        driver.findElement(carrouselOnWatch).click();
+    }
+
+    /**
+     * getOnElementCloseButtonVideoCarrousel
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementCloseButtonVideoCarrousel(){
+        return driver.findElement(closeButtonCarrousel).isDisplayed();
+    }
+
+    /**
+     * clickCloseButtonVideoCarrousel
+     * Method that click onto the found element on ESPN Page.
+     */
+    public void clickCloseButtonVideoCarrousel(){
+        driver.findElement(closeButtonCarrousel).click();
+    }
+
+
 
 }
