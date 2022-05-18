@@ -6,7 +6,8 @@ package strings;
  */
 public class EspnStrings {
     private String username, password, element1,element2,element3,element4,element5,element6,element7,element8,element9,element10, element11, element12;
-    private String element13, element14,element15,element16,element17,element18,element19;
+    private String element13, element14,element15,element16,element17,element18,element19,element20,element21,element22;
+    private String element23,element24;
 
     /**
      * Constructor.
@@ -35,7 +36,12 @@ public class EspnStrings {
         this.element16 = "//button[@type='submit'][contains(.,'Log In')]";
         this.element17 = "//button[@type='submit'][contains(.,'Sign Up')]";
         this.element18 = "//a[contains(@aria-label,'Change')]";
-        this.element19 = "//select[contains(@data-testid,'InputSelect')]";
+        this.element19 = "//span[contains(.,'Create Account')]";
+        this.element20 = "//input[contains(@class,'input-InputFirstName')]";
+        this.element21 = "//input[contains(@class,'input-InputLastName')]";
+        this.element22 = "//input[contains(@class,'input-InputEmail')]";
+        this.element23 = "//input[contains(@class,'input-password-new')]";
+        this.element24 = "//button[contains(@class,'btn-close')]";
     }
 
     /**
@@ -226,5 +232,50 @@ public class EspnStrings {
      */
     public String getElement19() {
         return element19;
+    }
+
+    /**
+     * getElement20
+     * Get the element20 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement20() {
+        return element20;
+    }
+
+    /**
+     * getElement21
+     * Get the element21 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement21() {
+        return element21;
+    }
+
+    /**
+     * getElement22
+     * Get the element22 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement22() {
+        return element22;
+    }
+
+    /**
+     * getElement23
+     * Get the element23 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement23() {
+        return element23;
+    }
+
+    /**
+     * getElement24
+     * Get the element24 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement24() {
+        return element24;
     }
 }

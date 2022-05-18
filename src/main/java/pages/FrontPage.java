@@ -1,11 +1,12 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import strings.EspnStrings;
+import util.AccountGenerator;
 
 
 /**
@@ -13,10 +14,12 @@ import strings.EspnStrings;
  * @author luis.pineda@globant.com
  */
 public class FrontPage {
-
+    /**
+     * Attributes
+     */
     private WebDriver driver;
     private EspnStrings espnStrings = new EspnStrings();
-
+    private Logger log = Logger.getLogger(FrontPage.class);
 
     private By loginPreButton1 = By.xpath(espnStrings.getElement1());
     private By loginPreButton2 = By.xpath(espnStrings.getElement2());
@@ -38,6 +41,12 @@ public class FrontPage {
     private By loginButtonIframe = By.xpath(espnStrings.getElement16());
     private By signUpButtonIframe = By.xpath(espnStrings.getElement17());
     private By countryRegionLink = By.xpath(espnStrings.getElement18());
+    private By signUpTittle = By.xpath(espnStrings.getElement19());
+    private By firstNameInput = By.xpath(espnStrings.getElement20());
+    private By lastNameInput = By.xpath(espnStrings.getElement21());
+    private By emailInput = By.xpath(espnStrings.getElement22());
+    private By passwordInput = By.xpath(espnStrings.getElement23());
+    private By closeButtonIframe = By.xpath(espnStrings.getElement24());
 
 
     /**
@@ -222,6 +231,76 @@ public class FrontPage {
      */
     public void clickOnCountryRegion(){
         driver.findElement(countryRegionLink).click();
+    }
+
+    /**
+     * getOnElementAlertSignUpTittle
+     * Method that returns the text from the element
+     * @return String
+     */
+    public String getOnElementAlertSignUpTittle(){
+        return driver.findElement(signUpTittle).getText();
+    }
+
+    /**
+     * getOnElementAlertFirstNameInput
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementAlertFirstNameInput(){
+        return driver.findElement(firstNameInput).isDisplayed();
+    }
+
+    /**
+     * getOnElementAlertLastNameInput
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementAlertLastNameInput(){
+        return driver.findElement(lastNameInput).isDisplayed();
+    }
+
+    /**
+     * getOnElementAlertEmailInput
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementAlertEmailInput(){
+        return driver.findElement(emailInput).isDisplayed();
+    }
+
+    /**
+     * getOnElementAlertEmailInput
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementAlertPasswordInput(){
+        return driver.findElement(passwordInput).isDisplayed();
+    }
+
+    /**
+     * getOnElementAlertcloseButtonIframe
+     * Method that returns true if the element is displayed, otherwise false
+     * @return boolean
+     */
+    public boolean getOnElementAlertCloseButtonIframe(){
+        return driver.findElement(closeButtonIframe).isDisplayed();
+    }
+
+    /**
+     * fillSignUpData
+     * Method that fill the first name, last name, email and password in the Sign Up form
+     */
+    public void fillSignUpData(){
+        AccountGenerator accountGenerator = new AccountGenerator();
+        log.info("Setting the first name on page [" + accountGenerator.getFirstName()+"]");
+        driver.findElement(firstNameInput).sendKeys(accountGenerator.getFirstName());
+        log.info("Setting the last name on page [" + accountGenerator.getLastName()+"]");
+        driver.findElement(lastNameInput).sendKeys(accountGenerator.getLastName());
+        log.info("Setting the email on page [" + accountGenerator.getEmail()+"]");
+        driver.findElement(emailInput).sendKeys(accountGenerator.getEmail());
+        log.info("Setting the password on page [" + accountGenerator.getPassword()+"]");
+        driver.findElement(passwordInput).sendKeys(accountGenerator.getPassword());
     }
 
 }
