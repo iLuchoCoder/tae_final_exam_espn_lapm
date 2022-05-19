@@ -43,9 +43,9 @@ public class EspnStrings {
         this.element23 = "//input[contains(@class,'input-password-new')]";
         this.element24 = "//button[contains(@class,'btn-close')]";
         this.element25 = "//span[@class='link-text'][normalize-space()='Watch']";
-        this.element26 = "//img[contains(@data-mptype,'image')])[3]";
-        this.element27 =  "//svg[contains(@class,'icon--color icon__svg icon__svg--dark')]";
-        this.element28 = "//div[@class='global-user-container']//li[@class='display-user'][normalize-space()='Welcome!']";
+        this.element26 = "(//div[contains(@class,'WatchTile__Meta')])[2]";
+        this.element27 =  "//div[@class='lightbox__closebtn__wrap flex items-center justify-center']//*[name()='svg']";
+        this.element28 = "(//li[contains(@class,'display-user')])[1]";
     }
 
     /**
@@ -316,6 +316,6 @@ public class EspnStrings {
      * @return String
      */
     public String getElement28() {
-        return element27;
+        return element28;
     }
 }

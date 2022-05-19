@@ -352,6 +352,25 @@ public class FrontPage {
     }
 
     /**
+     * waitVideoCarrousel
+     * Method that realize a wait until the visibility of element26 on ESPN Page.
+     */
+    public void waitVideoCarrousel(){
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(espnStrings.getElement26())));
+    }
+
+    /**
+     * waitCloseButtonVideoCarrousel
+     * Method that realize a wait until the visibility of element27 on ESPN Page.
+     */
+    public void waitCloseButtonVideoCarrousel(){
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(espnStrings.getElement27())));
+    }
+
+
+    /**
      * getOnElementAlertWelcomeLabelTittle
      * Method that returns the text from the element
      * @return String

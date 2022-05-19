@@ -67,8 +67,12 @@ public class SingleTests extends BaseTests {
     public void clickWatchSectionAndValidate(){
         log.info("Clicking on Watch Section");
         frontPage.clickWatchButton();
+        log.info("Waiting until the element Video Carrousel shows up");
+        frontPage.waitVideoCarrousel();
         log.info("Clicking on the second video on the first carrousel");
         frontPage.clickVideoCarrousel();
+        log.info("Waiting until the element Close Button Video Carrousel shows up");
+        frontPage.waitCloseButtonVideoCarrousel();
         log.info("Validating if -> 'X' close button on carrousel");
         assertTrue(frontPage.getOnElementCloseButtonVideoCarrousel(),"Close Button not found");
         log.info("Clicking on the 'X' close button on carrousel");
@@ -85,10 +89,12 @@ public class SingleTests extends BaseTests {
         log.info("Clicking on pre login button 1");
         frontPage.clickLoginPreButton1();
         log.info("Validating text -> 'Welcome {{username}}!'");
-        assertTrue(frontPage.getOnElementAlertWelcomeLabelTittle().contains("Welcome "+frontPage.returnFirstName()+"!"),"Welcome message is incorrect");
+        log.info(frontPage.getOnElementAlertWelcomeLabelTittle());
+        // The page gives the welcome message with spaces
+        assertTrue(frontPage.getOnElementAlertWelcomeLabelTittle().contains("Welcome"+frontPage.returnFirstName()+"!"),"Welcome message is incorrect");
     }
 
-    @Test(description = "Finally click on log out button and validate welcome message"
+    @Test(description = "Point 10 - Finally click on log out button and validate welcome message"
             ,dependsOnMethods = "validateWelcomeLoginMessage")
     public void logOutAndValidateWelcomeMessage(){
         log.info("Clicking on logout button");
@@ -98,6 +104,7 @@ public class SingleTests extends BaseTests {
         log.info("Clicking on pre login button 1");
         frontPage.clickLoginPreButton1();
         log.info("Validating text -> 'Welcome!'");
+        log.info(frontPage.getOnElementAlertWelcomeLabelTittle());
         assertTrue(frontPage.getOnElementAlertWelcomeLabelTittle().contains("Welcome!"),"Welcome message is incorrect");
     }
 }
