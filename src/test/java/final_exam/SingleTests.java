@@ -78,7 +78,26 @@ public class SingleTests extends BaseTests {
     @Test(description = "Points 8, 9 - Go back to landing page and validate 'Welcome {{username}}!'"
             ,dependsOnMethods = "clickWatchSectionAndValidate")
     public void validateWelcomeLoginMessage(){
-
+        log.info("Going back to the landing page");
+        backPage();
+        log.info("Waiting until the element PreButton1 shows up");
+        frontPage.waitTimePreButton1();
+        log.info("Clicking on pre login button 1");
+        frontPage.clickLoginPreButton1();
+        log.info("Validating text -> 'Welcome {{username}}!'");
+        assertTrue(frontPage.getOnElementAlertWelcomeLabelTittle().contains("Welcome "+frontPage.returnFirstName()+"!"),"Welcome message is incorrect");
     }
 
+    @Test(description = "Finally click on log out button and validate welcome message"
+            ,dependsOnMethods = "validateWelcomeLoginMessage")
+    public void logOutAndValidateWelcomeMessage(){
+        log.info("Clicking on logout button");
+        frontPage.clickLogoutPostButton();
+        log.info("Waiting until the element PreButton1 shows up");
+        frontPage.waitTimePreButton1();
+        log.info("Clicking on pre login button 1");
+        frontPage.clickLoginPreButton1();
+        log.info("Validating text -> 'Welcome!'");
+        assertTrue(frontPage.getOnElementAlertWelcomeLabelTittle().contains("Welcome!"),"Welcome message is incorrect");
+    }
 }

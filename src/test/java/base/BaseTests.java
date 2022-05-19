@@ -28,9 +28,9 @@ public class BaseTests {
     public void SetUpDocument(String url){
         // Chrome Driver for version 101.0.4951.41
         // Windows Property
-        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
-        // MacOS Property
-        //System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver","src/main/resources/win/chromedriver.exe");
+        // MacOS Property - Intel Processor
+        //System.setProperty("webdriver.chrome.driver","src/main/resources/mac/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-notifications");
         driver = new ChromeDriver(options);
@@ -47,5 +47,13 @@ public class BaseTests {
     @AfterClass
     public void shutdown(){
         driver.quit();
+    }
+
+    /**
+     * backPage
+     * Method that returns to a previous page
+     */
+    public void backPage(){
+        driver.navigate().back();
     }
 }

@@ -7,7 +7,7 @@ package strings;
 public class EspnStrings {
     private String username, password, element1,element2,element3,element4,element5,element6,element7,element8,element9,element10, element11, element12;
     private String element13, element14,element15,element16,element17,element18,element19,element20,element21,element22;
-    private String element23,element24, element25, element26,element27;
+    private String element23,element24, element25, element26,element27, element28;
 
     /**
      * Constructor.
@@ -43,9 +43,9 @@ public class EspnStrings {
         this.element23 = "//input[contains(@class,'input-password-new')]";
         this.element24 = "//button[contains(@class,'btn-close')]";
         this.element25 = "//span[@class='link-text'][normalize-space()='Watch']";
-        //this.element26 = "//body/div[@id='espnfitt']/div[@id='fitt-analytics']/div[@class='bp-mobileMDPlus bp-mobileLGPlus bp-tabletPlus bp-desktopPlus bp-desktopLGPlus bp-desktopXLGPlus no-touch']/div[@id='fittPageContainer']/section[@class='BucketsContainer overflow-hidden BucketsContainer--noHeader']/div[2]/section[1]/div[1]";
-        this.element26 = "(//img[contains(@data-mptype,'image')])[3]";
-        this.element27 =  "//div[@class='lightbox__closebtn__wrap flex items-center justify-center']//*[name()='svg']";
+        this.element26 = "//img[contains(@data-mptype,'image')])[3]";
+        this.element27 =  "//svg[contains(@class,'icon--color icon__svg icon__svg--dark')]";
+        this.element28 = "//div[@class='global-user-container']//li[@class='display-user'][normalize-space()='Welcome!']";
     }
 
     /**
@@ -307,6 +307,15 @@ public class EspnStrings {
      * @return String
      */
     public String getElement27() {
+        return element27;
+    }
+
+    /**
+     * getElement28
+     * Get the element28 for the test on ESPN Page.
+     * @return String
+     */
+    public String getElement28() {
         return element27;
     }
 }

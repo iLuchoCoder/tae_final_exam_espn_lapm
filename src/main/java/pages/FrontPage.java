@@ -20,6 +20,7 @@ public class FrontPage {
     private WebDriver driver;
     private EspnStrings espnStrings = new EspnStrings();
     private Logger log = Logger.getLogger(FrontPage.class);
+    private String first_name ="";
 
     private By loginPreButton1 = By.xpath(espnStrings.getElement1());
     private By loginPreButton2 = By.xpath(espnStrings.getElement2());
@@ -50,6 +51,7 @@ public class FrontPage {
     private By watchButton = By.xpath(espnStrings.getElement25());
     private By carrouselOnWatch = By.xpath(espnStrings.getElement26());
     private By closeButtonCarrousel = By.xpath(espnStrings.getElement27());
+    private By welcomeLabel = By.xpath(espnStrings.getElement28());
 
 
     /**
@@ -297,6 +299,7 @@ public class FrontPage {
     public void fillSignUpData(){
         AccountGenerator accountGenerator = new AccountGenerator();
         log.info("Setting the first name on page [" + accountGenerator.getFirstName()+"]");
+        first_name = accountGenerator.getFirstName();
         driver.findElement(firstNameInput).sendKeys(accountGenerator.getFirstName());
         log.info("Setting the last name on page [" + accountGenerator.getLastName()+"]");
         driver.findElement(lastNameInput).sendKeys(accountGenerator.getLastName());
@@ -304,6 +307,15 @@ public class FrontPage {
         driver.findElement(emailInput).sendKeys(accountGenerator.getEmail());
         log.info("Setting the password on page [" + accountGenerator.getPassword()+"]");
         driver.findElement(passwordInput).sendKeys(accountGenerator.getPassword());
+    }
+
+    /**
+     * returnFirstName
+     * Method that returns the first name generated previously
+     * @return String
+     */
+    public String returnFirstName(){
+        return first_name;
     }
 
     /**
@@ -337,6 +349,15 @@ public class FrontPage {
      */
     public void clickCloseButtonVideoCarrousel(){
         driver.findElement(closeButtonCarrousel).click();
+    }
+
+    /**
+     * getOnElementAlertWelcomeLabelTittle
+     * Method that returns the text from the element
+     * @return String
+     */
+    public String getOnElementAlertWelcomeLabelTittle(){
+        return driver.findElement(welcomeLabel).getText();
     }
 
 
