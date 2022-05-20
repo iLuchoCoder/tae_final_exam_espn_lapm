@@ -56,4 +56,12 @@ public class BaseTests {
     public void backPage(){
         driver.navigate().back();
     }
+
+    /**
+     * reloadPage
+     * Method that returns reloads the page
+     */
+    public void reloadPage(){
+        driver.navigate().refresh();
+    }
 }

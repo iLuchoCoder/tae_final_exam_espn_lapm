@@ -75,6 +75,8 @@ public class SingleTests extends BaseTests {
         frontPage.waitCloseButtonVideoCarrousel();
         log.info("Validating if -> 'X' close button on carrousel");
         assertTrue(frontPage.getOnElementCloseButtonVideoCarrousel(),"Close Button not found");
+        log.info("Waiting until the element Close Button Video Carrousel shows up");
+        frontPage.waitCloseButtonVideoCarrousel();
         log.info("Clicking on the 'X' close button on carrousel");
         frontPage.clickCloseButtonVideoCarrousel();
     }
@@ -88,17 +90,25 @@ public class SingleTests extends BaseTests {
         frontPage.waitTimePreButton1();
         log.info("Clicking on pre login button 1");
         frontPage.clickLoginPreButton1();
-        log.info("Validating text -> 'Welcome {{username}}!'");
+        // The page gives the welcome message without spaces
+        log.info("Validating text -> 'Welcome{{username}}!'");
         log.info(frontPage.getOnElementAlertWelcomeLabelTittle());
-        // The page gives the welcome message with spaces
         assertTrue(frontPage.getOnElementAlertWelcomeLabelTittle().contains("Welcome"+frontPage.returnFirstName()+"!"),"Welcome message is incorrect");
     }
 
     @Test(description = "Point 10 - Finally click on log out button and validate welcome message"
             ,dependsOnMethods = "validateWelcomeLoginMessage")
     public void logOutAndValidateWelcomeMessage(){
-        log.info("Clicking on logout button");
+        log.info("Reloading the page");
+        reloadPage();
+        log.info("Waiting until the element PreButton1 shows up");
+        frontPage.waitTimePreButton1();
+        log.info("Clicking on pre login button 1");
+        frontPage.clickLoginPreButton1();
+        log.info("Clicking on log out post button");
         frontPage.clickLogoutPostButton();
+        log.info("Reloading the page");
+        reloadPage();
         log.info("Waiting until the element PreButton1 shows up");
         frontPage.waitTimePreButton1();
         log.info("Clicking on pre login button 1");
